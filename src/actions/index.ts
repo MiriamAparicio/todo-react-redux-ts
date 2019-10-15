@@ -1,16 +1,2 @@
-import axios from 'axios';
-import { Dispatch } from 'redux';
-import { async } from 'q';
-
-const url = 'https://jsonplaceholder.typicode.com/todos';
-
-export const fetchTodos = () => {
-  return async (dispatch: Dispatch) => {
-    const response = await axios.get(url);
-
-    dispatch({
-      type: 'FETCH_TODOS',
-      payload: response.data
-    });
-  };
-};
+export * from './todos';
+export * from './types';
